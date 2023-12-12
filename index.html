@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div id="root" class="flex flex-row w-wrpWidth">
+      <!-- left menu -->
+      <div id="leftMenu" class="w-2/12 px-5 pt-4 border-r">
+        <h1 class="py-2 px2 text-l">Bluewalnut - 상품구독</h1>
+        <div class="mt-4">
+          <ul id="categoryList" class="flex flex-col gap-3 text-m"></ul>
+        </div>
+      </div>
+
+      <!-- content -->
+      <div id="content" class="w-10/12 px-7 pt-6 pb-24">
+        <h2 class="text-4xl pb-4 text-bold ">😊 API TEST</h2>
+        <h3 class="text-2xl mb-10 text-bold">카테고리1</h3>
+        <!-- api list -->
+        <div id="apis"></div>
+      </div>
+    </div>
+
+    <script src="js/customCss.js"></script>
+    <script src="js/apiItems.js"></script>
+    <script src="js/category.js"></script>
+    <script src="js/request.js"></script>
+    
+    <script>
+      // 카테고리 메뉴 생성
+      const categoryItems = [
+        {title:"카테고리1",url:"url1111.com"},
+        {title:"카테고리2",url:"url1111.com"},
+        {title:"카테고리3",url:"url1111.com"},
+        {title:"카테고리4",url:"url1111.com"},
+      ]
+      createCategoryList(categoryItems)
+
+      // API 영역 생성
+      const apiItems = [
+        {
+          apiName:"Call API 1", 
+          apiCode:"1",
+          inputItems : [
+            {title: "param1" , type : "String"},
+            {title: "param1" , type : "String"},
+            {title: "param1" , type : "String"},
+          ]
+        },
+        {
+          apiName:"Call API 2", 
+          apiCode:"2",
+          inputItems : [
+            {title: "param1" , type : "String"},
+            {title: "param1" , type : "String"},
+            {title: "param1" , type : "String"},
+          ]
+        },
+
+      ];
+
+      createApiItems(apiItems);
+
+    </script>
+
+
+     
+  </body>
+</html>

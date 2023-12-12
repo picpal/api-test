@@ -1,0 +1,20 @@
+[
+    {
+      "apiName":"Call API 1", 
+      "apiCode":"1",
+      "inputItems" : [
+        {"title": "param1" , "type" : "String"},
+        {"title": "param1" , "type" : "String"},
+        {"title": "param1" , "type" : "String"},
+      ]
+    },
+    {
+      "apiName":"Call API 2", 
+      "apiCode":"2",
+      "inputItems" : [
+        {"title": "param1" , "type" : "String"},
+        {"title": "param1" , "type" : "String"},
+        {"title": "param1" , "type" : "String"}
+      ]
+    }
+]
