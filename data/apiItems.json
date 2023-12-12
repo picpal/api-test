@@ -5,7 +5,7 @@
       "inputItems" : [
         {"title": "param1" , "type" : "String"},
         {"title": "param1" , "type" : "String"},
-        {"title": "param1" , "type" : "String"},
+        {"title": "param1" , "type" : "String"}
       ]
     },
     {

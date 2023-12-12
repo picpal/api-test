@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
@@ -17,56 +18,98 @@
 
       <!-- content -->
       <div id="content" class="w-10/12 px-7 pt-6 pb-24">
-        <h2 class="text-4xl pb-4 text-bold ">😊 API TEST</h2>
+        <h2 class="text-4xl pb-4 text-bold">BWC API TEST</h2>
         <h3 class="text-2xl mb-10 text-bold">카테고리1</h3>
         <!-- api list -->
         <div id="apis"></div>
       </div>
+
+      <!-- Quick Menu -->
+      <div
+        id="quickMenu"
+        class="fixed top-48 right-20 mt-5 bg-white border border-gray-200 rounded-lg"
+      ></div>
     </div>
 
     <script src="js/customCss.js"></script>
+    <script src="js/request.js"></script>
     <script src="js/apiItems.js"></script>
     <script src="js/category.js"></script>
-    <script src="js/request.js"></script>
-    
+    <script src="js/quickMenu.js"></script>
+
     <script>
       // 카테고리 메뉴 생성
       const categoryItems = [
-        {title:"카테고리1",url:"url1111.com"},
-        {title:"카테고리2",url:"url1111.com"},
-        {title:"카테고리3",url:"url1111.com"},
-        {title:"카테고리4",url:"url1111.com"},
-      ]
-      createCategoryList(categoryItems)
+        { title: "카테고리1", url: "url1111.com" },
+        { title: "카테고리2", url: "url1111.com" },
+        { title: "카테고리3", url: "url1111.com" },
+        { title: "카테고리4", url: "url1111.com" },
+      ];
+      createCategoryList(categoryItems);
 
       // API 영역 생성
       const apiItems = [
         {
-          apiName:"Call API 1", 
-          apiCode:"1",
-          inputItems : [
-            {title: "param1" , type : "String"},
-            {title: "param1" , type : "String"},
-            {title: "param1" , type : "String"},
-          ]
+          apiName: "Call API 1",
+          apiCode: "1",
+          endpoint: "/v1/test",
+          inputItems: [
+            {
+              title: "param1",
+              name: "param1",
+              type: "String",
+              value: "A",
+              essential: true,
+            },
+            {
+              title: "param2",
+              name: "param2",
+              type: "String",
+              value: "B",
+              essential: false,
+            },
+            {
+              title: "param3",
+              name: "param3",
+              type: "String",
+              value: "C",
+              essential: false,
+            },
+          ],
         },
         {
-          apiName:"Call API 2", 
-          apiCode:"2",
-          inputItems : [
-            {title: "param1" , type : "String"},
-            {title: "param1" , type : "String"},
-            {title: "param1" , type : "String"},
-          ]
+          apiName: "Call API 2",
+          apiCode: "2",
+          endpoint: "/v1/hello",
+          inputItems: [
+            {
+              title: "param1",
+              name: "param1",
+              type: "String",
+              value: "A",
+              essential: true,
+            },
+            {
+              title: "param2",
+              name: "param2",
+              type: "String",
+              value: "B",
+              essential: true,
+            },
+            {
+              title: "param3",
+              name: "param3",
+              type: "String",
+              value: "C",
+              essential: false,
+            },
+          ],
         },
-
       ];
-
       createApiItems(apiItems);
 
+      // 퀵메뉴 영역 생성
+      createQuickMenu(apiItems);
     </script>
-
-
-     
   </body>
 </html>
