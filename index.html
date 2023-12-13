@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./css/index.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="./css/tailwind.css" />
   </head>
   <body>
     <div id="root" class="flex flex-row w-wrpWidth">
@@ -17,9 +17,9 @@
       </div>
 
       <!-- content -->
-      <div id="content" class="w-10/12 px-7 pt-6 pb-24">
-        <h2 class="text-4xl pb-4 text-bold">BWC API TEST</h2>
-        <h3 class="text-2xl mb-10 text-bold">카테고리1</h3>
+      <div id="content" class="w-10/12 pr-7 pl-10 pt-6 pb-24">
+        <h2 class="text-5xl pb-4 font-bold">BWC API TEST</h2>
+        <h3 id="apiCategory" class="text-2xl mb-10">카테고리1</h3>
         <!-- api list -->
         <div id="apis"></div>
       </div>
@@ -31,31 +31,42 @@
       ></div>
     </div>
 
-    <script src="js/customCss.js"></script>
+    <!-- function import -->
     <script src="js/request.js"></script>
     <script src="js/apiItems.js"></script>
     <script src="js/category.js"></script>
     <script src="js/quickMenu.js"></script>
 
+    <!-- function 호출을 통한 Component 생성 -->
     <script>
-      // 카테고리 메뉴 생성
+      /**
+       * 카테고리 메뉴 생성
+       * 로컬에서만 데이터를 직접 선언
+       * 서버에서는 json 데이터를 fetch로 가져와서 함수로 전달
+      */
       const categoryItems = [
-        { title: "카테고리1", url: "url1111.com" },
-        { title: "카테고리2", url: "url1111.com" },
-        { title: "카테고리3", url: "url1111.com" },
-        { title: "카테고리4", url: "url1111.com" },
+        { categoryId : "1", categoryName: "카테고리1" },
+        { categoryId : "2", categoryName: "카테고리2" },
+        { categoryId : "3", categoryName: "카테고리3" },
+        { categoryId : "4", categoryName: "카테고리4" },
       ];
       createCategoryList(categoryItems);
 
-      // API 영역 생성
+      /**
+       * API 영역 생성
+       * 로컬에서만 데이터를 직접 선언
+       * 서버에서는 json 데이터를 fetch로 가져와서 함수로 전달
+      */
       const apiItems = [
         {
           apiName: "Call API 1",
           apiCode: "1",
           endpoint: "/v1/test",
+          description:"카드 번호 결제 API는 추가 계약 후 사용할 수 있습니다.<br />결제할 카드 번호 및 기타 카드 정보로 결제를 요청합니다.",
           inputItems: [
             {
               title: "param1",
+              fieldName: "파라미터1",
               name: "param1",
               type: "String",
               value: "A",
@@ -63,6 +74,7 @@
             },
             {
               title: "param2",
+              fieldName: "파라미터2",
               name: "param2",
               type: "String",
               value: "B",
@@ -70,6 +82,7 @@
             },
             {
               title: "param3",
+              fieldName: "파라미터3",
               name: "param3",
               type: "String",
               value: "C",
@@ -81,9 +94,11 @@
           apiName: "Call API 2",
           apiCode: "2",
           endpoint: "/v1/hello",
+          description:"카드 번호 결제 API는 추가 계약 후 사용할 수 있습니다.<br />결제할 카드 번호 및 기타 카드 정보로 결제를 요청합니다.",
           inputItems: [
             {
               title: "param1",
+              fieldName: "파라미터1",
               name: "param1",
               type: "String",
               value: "A",
@@ -91,6 +106,7 @@
             },
             {
               title: "param2",
+              fieldName: "파라미터2",
               name: "param2",
               type: "String",
               value: "B",
@@ -98,6 +114,7 @@
             },
             {
               title: "param3",
+              fieldName: "파라미터3",
               name: "param3",
               type: "String",
               value: "C",
@@ -106,6 +123,7 @@
           ],
         },
       ];
+      // API 생성
       createApiItems(apiItems);
 
       // 퀵메뉴 영역 생성

@@ -1,4 +1,5 @@
 async function callApi(endpoint, method = "GET", body = null, headers = {}) {
+  // 요청하는 URL로 수정
   const url = "https:/dev...." + endpoint;
 
   const options = {

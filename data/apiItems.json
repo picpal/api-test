@@ -1,20 +1,66 @@
 [
     {
-      "apiName":"Call API 1", 
-      "apiCode":"1",
-      "inputItems" : [
-        {"title": "param1" , "type" : "String"},
-        {"title": "param1" , "type" : "String"},
-        {"title": "param1" , "type" : "String"}
-      ]
+        "apiName": "Call API 1",
+        "apiCode": "1",
+        "endpoint": "/v1/test",
+        "description": "카드 번호 결제 API는 추가 계약 후 사용할 수 있습니다.<br />결제할 카드 번호 및 기타 카드 정보로 결제를 요청합니다.",
+        "inputItems": [
+        {
+            "title": "param1",
+            "fieldName": "파라미터1",
+            "name": "param1",
+            "type": "String",
+            "value": "A",
+            "essential": true
+        },
+        {
+            "title": "param2",
+            "fieldName": "파라미터2",
+            "name": "param2",
+            "type": "String",
+            "value": "B",
+            "essential": false
+        },
+        {
+            "title": "param3",
+            "fieldName": "파라미터3",
+            "name": "param3",
+            "type": "String",
+            "value": "C",
+            "essential": false
+        }
+        ]
     },
     {
-      "apiName":"Call API 2", 
-      "apiCode":"2",
-      "inputItems" : [
-        {"title": "param1" , "type" : "String"},
-        {"title": "param1" , "type" : "String"},
-        {"title": "param1" , "type" : "String"}
-      ]
+        "apiName": "Call API 2",
+        "apiCode": "2",
+        "endpoint": "/v1/hello",
+        "description": "카드 번호 결제 API는 추가 계약 후 사용할 수 있습니다.<br />결제할 카드 번호 및 기타 카드 정보로 결제를 요청합니다.",
+        "inputItems": [
+        {
+            "title": "param1",
+            "fieldName": "파라미터1",
+            "name": "param1",
+            "type": "String",
+            "value": "A",
+            "essential": true
+        },
+        {
+            "title": "param2",
+            "fieldName": "파라미터2",
+            "name": "param2",
+            "type": "String",
+            "value": "B",
+            "essential": true
+        },
+        {
+            "title": "param3",
+            "fieldName": "파라미터3",
+            "name": "param3",
+            "type": "String",
+            "value": "C",
+            "essential": false
+        }
+        ]
     }
 ]
